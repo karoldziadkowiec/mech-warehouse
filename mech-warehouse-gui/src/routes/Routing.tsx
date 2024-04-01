@@ -22,7 +22,7 @@ const RenderWithNavbar: React.FC<{ children: ReactNode }> = ({ children }) => (
   </>
 );
 
-function Routing() {
+const Routing = () => {
   return (
     <Router>
       <Routes>
