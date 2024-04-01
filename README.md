@@ -12,7 +12,7 @@ The project is a web application presenting a warehouse system for mechanics.
   - Database: **Microsoft SQL Server**
 - f r o n t e n d:
   - **React**
-    - JavaScript
+    - TypeScript
 
 ## Example Images
 
