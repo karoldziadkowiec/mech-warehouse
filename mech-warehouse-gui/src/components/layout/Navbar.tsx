@@ -10,6 +10,7 @@ const AppNavbar = () => {
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container>
+        <img src={require('../../img/logo.png')} alt="logo" className="logo" />
         <Navbar.Brand as={NavLink} to="/home">mech-warehouse</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">

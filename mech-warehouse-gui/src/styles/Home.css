@@ -1,5 +1,81 @@
 .Home {
     text-align: center;
-    padding-top: 20px;
+}
+
+.homeLogo {
+    width: 80px;
+}
+
+.startSection {
+    background-color: white;
+    color: black;
+    padding: 70px;
+}
+
+.links {
+    padding-top: 25px;
+    display: flex;
+    gap: 2%;
+    font-size: 20px;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+}
+
+.link {
+    color: rgb(108, 99, 99);
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.sign {
+    color: rgb(196, 171, 35);
+    font-weight: bold;
+}
+
+.mech-warehouse {
+    color: rgb(67, 64, 53);
+    font-family: Garamond, serif;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.startSection h2 {
+    color: rgb(152, 133, 27);
+    font-family: Garamond, serif;
+    font-weight: bold;
+    padding-top: 30px;
+}
+
+.startSection h4 {
+    font-family: 'Times New Roman', serif;
+}
+
+.blackSection {
+    background-color: rgb(32, 31, 31);
+    padding: 80px;
+}
+
+.blackSection h1 {
+    color: rgb(188, 165, 34);
     padding-bottom: 20px;
+}
+
+.blackSection h5 {
+    color: rgb(193, 193, 193);
+}
+
+.whiteSection {
+    background-color: white;
+    color: rgb(188, 165, 34);
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.whiteSection h1 {
+    padding-bottom: 20px;
+}
+
+.whiteSection h5 {
+    color: rgb(55, 55, 55);
 }

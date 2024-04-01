@@ -37,6 +37,11 @@
   }
 }
 
+.logo {
+  width: 40px;
+  margin-right: 10px;
+}
+
 .yellow-links .nav-link {
-  color: rgb(215, 200, 34);
+  color: rgb(232, 202, 38);
 }
