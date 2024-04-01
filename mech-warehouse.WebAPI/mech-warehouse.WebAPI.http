@@ -1,0 +1,6 @@
+@mech_warehouse.WebAPI_HostAddress = http://localhost:5032
+
+GET {{mech_warehouse.WebAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

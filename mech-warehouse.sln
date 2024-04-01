@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34723.18
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mech-warehouse.WebAPI", "mech-warehouse.WebAPI\mech-warehouse.WebAPI.csproj", "{109D8E03-64EF-4212-A03E-E4162B3A403F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mech-warehouse.Tests", "mech-warehouse.Tests\mech-warehouse.Tests.csproj", "{1F2139DD-04D4-4631-A8CE-1826A3E0FADE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{109D8E03-64EF-4212-A03E-E4162B3A403F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{109D8E03-64EF-4212-A03E-E4162B3A403F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{109D8E03-64EF-4212-A03E-E4162B3A403F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{109D8E03-64EF-4212-A03E-E4162B3A403F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F2139DD-04D4-4631-A8CE-1826A3E0FADE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F2139DD-04D4-4631-A8CE-1826A3E0FADE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F2139DD-04D4-4631-A8CE-1826A3E0FADE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F2139DD-04D4-4631-A8CE-1826A3E0FADE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3E652165-7D8A-42EA-9CA6-822F2F2FF4BC}
+	EndGlobalSection
+EndGlobal
