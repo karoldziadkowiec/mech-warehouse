@@ -29,9 +29,9 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<Login />} />
           <Route path="/registration" element={<Registration />} />
-          <Route path="/" element={<RenderWithNavbar><Home/></RenderWithNavbar>} />
+          <Route path="/home" element={<RenderWithNavbar><Home/></RenderWithNavbar>} />
           <Route path="/parts" element={<RenderWithNavbar><Parts/></RenderWithNavbar>} />
           <Route path="/tools" element={<RenderWithNavbar><Tools/></RenderWithNavbar>} />
           <Route path="/equipment" element={<RenderWithNavbar><Equipment/></RenderWithNavbar>} />

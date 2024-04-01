@@ -18,6 +18,7 @@ namespace mech_warehouse.WebAPI.Repositories.Classes
         {
             return await Task.FromResult(_context.Users
                 .Include(u => u.Address)
+                .Include(u => u.Position)
                 .OrderBy(u => u.LastName));
         }
 
@@ -25,6 +26,7 @@ namespace mech_warehouse.WebAPI.Repositories.Classes
         {
             return await _context.Users
                 .Include(u => u.Address)
+                .Include(u => u.Position)
                 .FirstOrDefaultAsync(u => u.Id == userId);
         }
     }

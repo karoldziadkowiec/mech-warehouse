@@ -11,6 +11,9 @@ namespace mech_warehouse.WebAPI.Models
         public string FirstName { get; set; }
         [MaxLength(30)]
         public string LastName { get; set; }
+        [MaxLength(9)]
+        public string PhoneNumber { get; set; }
         public Address Address { get; set; }
+        public Position Position { get; set; }
     }
 }

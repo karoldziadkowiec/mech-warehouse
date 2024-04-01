@@ -10,11 +10,11 @@ const AppNavbar = () => {
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container>
-        <Navbar.Brand as={NavLink} to="/">mech-warehouse</Navbar.Brand>
+        <Navbar.Brand as={NavLink} to="/home">mech-warehouse</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto yellow-links">
-            <Nav.Link as={NavLink} to="/">Home</Nav.Link>
+            <Nav.Link as={NavLink} to="/home">Home</Nav.Link>
             <NavDropdown title="Inventory" id="basic-nav-dropdown">
               <NavDropdown.Item as={NavLink} to="/parts">Parts</NavDropdown.Item>
               <NavDropdown.Item as={NavLink} to="/tools">Tools</NavDropdown.Item>
@@ -30,7 +30,7 @@ const AppNavbar = () => {
             <Nav.Link as={NavLink} to="/employees">Employees</Nav.Link>
             <NavDropdown title="Account" id="basic-nav-dropdown">
               <NavDropdown.Item as={NavLink} to="/account">My account</NavDropdown.Item>
-              <NavDropdown.Item as={NavLink} to="/login">Log out</NavDropdown.Item>
+              <NavDropdown.Item as={NavLink} to="/">Log out</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

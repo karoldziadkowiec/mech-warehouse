@@ -1,5 +1,27 @@
 .Login {
-    text-align: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    background: url('../img/login-background.jpg');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.Login h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(186, 151, 14);
+    padding-bottom: 10px;
+}
+
+.login-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 600px;
+    padding: 30px 50px 40px ;
+    border-radius: 20px;
+}
+
+.white-label {
+    color: white;
 }
