@@ -1,10 +1,12 @@
 ﻿using mech_warehouse.WebAPI.Repositories.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace mech_warehouse.WebAPI.Controllers
 {
     [Route("api/users")]
+    [Authorize]
     [ApiController]
     public class UserController : ControllerBase
     {
@@ -27,26 +29,6 @@ namespace mech_warehouse.WebAPI.Controllers
             catch (Exception ex)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, $"Error retrieving users: {ex.Message}");
-            }
-        }
-
-        // GET: /api/users/:id
-        [HttpGet("{userId}")]
-        public async Task<IActionResult> GetUserById(int userId)
-        {
-            try
-            {
-                var user = await _userRepository.GetUserById(userId);
-                if (user == null)
-                {
-                    return NotFound($"User with id {userId} not found");
-                }
-
-                return Ok(user);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, $"Error retrieving user: {ex.Message}");
             }
         }
 
