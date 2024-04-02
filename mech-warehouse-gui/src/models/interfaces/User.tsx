@@ -9,4 +9,4 @@ export interface User {
     position: Position
     email: string
     passwordHash: string
-  }
+}

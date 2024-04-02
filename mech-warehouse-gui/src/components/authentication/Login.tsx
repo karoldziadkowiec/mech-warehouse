@@ -30,6 +30,7 @@ const Login = () => {
           </Form.Group>
           <div className="d-grid">
             <Button variant="warning" type="submit" onClick={moveToHomePage}>Log In</Button>
+            <p></p>
             <Button variant="secondary" onClick={moveToRegistrationPage}>Register account</Button>
           </div>
         </Form>

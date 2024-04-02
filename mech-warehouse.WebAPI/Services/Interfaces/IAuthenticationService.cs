@@ -4,7 +4,7 @@ namespace mech_warehouse.WebAPI.Services.Interfaces
 {
     public interface IAuthenticationService
     {
-        Task<string> Register(RegisterRequest request);
+        Task<bool> Register(RegisterRequest request);
         Task<string> Login(LoginRequest request);
     }
 }

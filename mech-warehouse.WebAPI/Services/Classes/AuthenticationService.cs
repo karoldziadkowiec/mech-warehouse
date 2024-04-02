@@ -20,7 +20,7 @@ namespace mech_warehouse.WebAPI.Services.Classes
             _configuration = configuration;
         }
 
-        public async Task<string> Register(RegisterRequest request)
+        public async Task<bool> Register(RegisterRequest request)
         {
             var userByEmail = await _userManager.FindByEmailAsync(request.Email);
             if (userByEmail != null)
@@ -50,7 +50,7 @@ namespace mech_warehouse.WebAPI.Services.Classes
                 throw new ArgumentException($"Unable to register user {request.Email} errors: {GetErrorsText(result.Errors)}");
             }
 
-            return await Login(new LoginRequest { Email = request.Email, Password = request.Password });
+            return true;
         }
 
         public async Task<string> Login(LoginRequest request)
