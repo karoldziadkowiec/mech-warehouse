@@ -14,36 +14,8 @@ const Home = () => {
         });
     };
 
-    const moveToPartsPage = () => {
-        navigate('/parts');
-    };
-
-    const moveToToolsPage = () => {
-        navigate('/tools');
-    };
-
-    const moveToEquipmentPage = () => {
-        navigate('/equipment');
-    };
-
-    const moveToOrdersPage = () => {
-        navigate('/orders');
-    };
-
-    const moveToNewOrderPage = () => {
-        navigate('/new-order');
-    };
-
-    const moveToRaportsPage = () => {
-        navigate('/raports');
-    };
-
-    const moveToEmployeesPage = () => {
-        navigate('/employees');
-    };
-
-    const moveToAccountPage = () => {
-        navigate('/account');
+    const moveToPage = (page: string) => {
+        navigate(`/${page}`);
     };
 
     return (
@@ -72,11 +44,11 @@ const Home = () => {
                 <h5>From essential components to specialized tools, find everything you need.</h5>
                 <p></p>
                 <div className="links">
-                    <Button variant="warning" onClick={moveToPartsPage}>Parts</Button>
+                    <Button variant="warning" onClick={() => moveToPage("parts")}>Parts</Button>
                     <div className="sign"> | </div>
-                    <Button variant="warning" onClick={moveToToolsPage}>Tools</Button>
+                    <Button variant="warning" onClick={() => moveToPage("tools")}>Tools</Button>
                     <div className="sign"> | </div>
-                    <Button variant="warning" onClick={moveToEquipmentPage}>Equipment</Button>
+                    <Button variant="warning" onClick={() => moveToPage("equipment")}>Equipment</Button>
                 </div>
             </Element>
             <Element name="orders" className="whiteSection">
@@ -85,9 +57,9 @@ const Home = () => {
                 <h5>Our streamlined system guarantees timely delivery, keeping your operations running smoothly.</h5>
                 <p></p>
                 <div className="links">
-                    <Button variant="warning" onClick={moveToOrdersPage}>Orders</Button>
+                    <Button variant="warning" onClick={() => moveToPage("orders")}>Orders</Button>
                     <div className="sign"> | </div>
-                    <Button variant="warning" onClick={moveToNewOrderPage}>New Order</Button>
+                    <Button variant="warning" onClick={() => moveToPage("new-order")}>New Order</Button>
                 </div>
             </Element>
             <Element name="raports" className="blackSection">
@@ -95,21 +67,21 @@ const Home = () => {
                 <h5>Access comprehensive reports detailing key metrics and performance indicators for your mechanical warehouse.</h5>
                 <h5>Gain valuable insights to optimize operations and drive informed decision-making for enhanced productivity and efficiency.</h5>
                 <p></p>
-                <Button variant="warning" onClick={moveToRaportsPage}>Raports</Button>
+                <Button variant="warning" onClick={() => moveToPage("raports")}>Raports</Button>
             </Element>
             <Element name="employees" className="whiteSection">
                 <h1>Employees</h1>
                 <h5>Meet dedicated team of skilled professionals committed to delivering exceptional service to your warehouse.</h5>
                 <h5>Look at the data of your colleagues and manage with them carefully.</h5>
                 <p></p>
-                <Button variant="warning" onClick={moveToEmployeesPage}>Employees</Button>
+                <Button variant="warning" onClick={() => moveToPage("employees")}>Employees</Button>
             </Element>
             <Element name="account" className="blackSection">
                 <h1>Account</h1>
                 <h5>Easily manage your account details and preferences with our intuitive platform tailored for your convenience.</h5>
                 <h5>Navigate effortlessly through your account settings, meticulously designed to ensure utmost user-friendliness and convenience.</h5>
                 <p></p>
-                <Button variant="warning" onClick={moveToAccountPage}>Account</Button>
+                <Button variant="warning" onClick={() => moveToPage("account")}>Account</Button>
             </Element>
         </div>
     );
