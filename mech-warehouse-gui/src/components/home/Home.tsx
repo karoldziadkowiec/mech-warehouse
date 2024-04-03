@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import { Element, scroller } from 'react-scroll';
 import { Button, Alert } from 'react-bootstrap';
-import ApiURL from '../../constants/ApiConfig';
 import { User } from '../../models/interfaces/User';
 import '../../styles/Home.css';
 
@@ -12,35 +11,13 @@ const Home = () => {
     const [error, setError] = useState<string>('');
 
     useEffect(() => {
-        const fetchUserData = async () => {
-            try {
-                const token = localStorage.getItem('token');
-                if (!token) {
-                    setError('Token not found.');
-                    return;
-                }
-        
-                const email = 'admin@gmail.com';
-        
-                const response = await fetch(`${ApiURL}/user?email=${encodeURIComponent(email)}`, {
-                    method: 'GET',
-                    headers: {
-                        'Authorization': `Bearer ${token}`
-                    }
-                });
-        
-                if (response.status === 200) {
-                    const userData: User = await response.json();
-                    setUser(userData);
-                } else {
-                    setError('Failed to fetch user data.');
-                }
-            } catch (error) {
-                console.error('Error fetching user data:', error);
-                setError('An error occurred. Please try again later.');
-            }
-        };
-        fetchUserData();
+        const userDataString = localStorage.getItem('user');
+        if (userDataString) {
+            const userData: User = JSON.parse(userDataString);
+            setUser(userData);
+        } else {
+            setError('User data not found.');
+        }
     }, []);
 
     const handleLinkClick = (id: string) => {
