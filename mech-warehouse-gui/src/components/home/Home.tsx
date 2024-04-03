@@ -1,11 +1,47 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import { Element, scroller } from 'react-scroll';
-import { Button } from 'react-bootstrap';
+import { Button, Alert } from 'react-bootstrap';
+import ApiURL from '../../constants/ApiConfig';
+import { User } from '../../models/interfaces/User';
 import '../../styles/Home.css';
 
 const Home = () => {
     const navigate = useNavigate();
+    const [user, setUser] = useState<User | null>(null);
+    const [error, setError] = useState<string>('');
+
+    useEffect(() => {
+        const fetchUserData = async () => {
+            try {
+                const token = localStorage.getItem('token');
+                if (!token) {
+                    setError('Token not found.');
+                    return;
+                }
+        
+                const email = 'admin@gmail.com';
+        
+                const response = await fetch(`${ApiURL}/user?email=${encodeURIComponent(email)}`, {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+        
+                if (response.status === 200) {
+                    const userData: User = await response.json();
+                    setUser(userData);
+                } else {
+                    setError('Failed to fetch user data.');
+                }
+            } catch (error) {
+                console.error('Error fetching user data:', error);
+                setError('An error occurred. Please try again later.');
+            }
+        };
+        fetchUserData();
+    }, []);
 
     const handleLinkClick = (id: string) => {
         scroller.scrollTo(id, {
@@ -33,6 +69,10 @@ const Home = () => {
                 <RouterLink onClick={() => handleLinkClick("account")} to="#" className="link" style={{ cursor: "pointer" }}>Account</RouterLink>
             </div>
             <Element name="home" className="startSection">
+                {error && <Alert variant="danger">{error}</Alert>}
+                {user && (
+                    <h2>Welcome, {user.firstName}!</h2>
+                )}
                 <h1><span className="mech-warehouse">mech-warehouse</span></h1>
                 <img src={require('../../img/logo.png')} alt="homeLogo" className="homeLogo" />
                 <h2>MECH-WAREHOUSE - WHERE PRECISION MEETS EFFICIENCY</h2>

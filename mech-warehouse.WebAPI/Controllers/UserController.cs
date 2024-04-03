@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace mech_warehouse.WebAPI.Controllers
 {
-    [Route("api/users")]
+    [Route("api")]
     [Authorize]
     [ApiController]
     public class UserController : ControllerBase
@@ -18,7 +18,7 @@ namespace mech_warehouse.WebAPI.Controllers
         }
 
         // GET: /api/users
-        [HttpGet]
+        [HttpGet("users")]
         public async Task<IActionResult> GetAllUsers()
         {
             try
@@ -32,6 +32,17 @@ namespace mech_warehouse.WebAPI.Controllers
             }
         }
 
+        // GET: api/user
+        [HttpGet("user")]
+        public async Task<IActionResult> GetUserByEmail([FromQuery] string email)
+        {
+            var user = await _userRepository.GetUserByEmail(email);
+            if (user == null)
+            {
+                return NotFound();
+            }
 
+            return Ok(user);
+        }
     }
 }

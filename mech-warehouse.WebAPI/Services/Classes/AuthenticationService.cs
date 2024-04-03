@@ -1,7 +1,9 @@
-﻿using mech_warehouse.WebAPI.Models.DTOs;
+﻿using mech_warehouse.WebAPI.DataLayer;
+using mech_warehouse.WebAPI.Models.DTOs;
 using mech_warehouse.WebAPI.Models.Entities;
 using mech_warehouse.WebAPI.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -13,11 +15,13 @@ namespace mech_warehouse.WebAPI.Services.Classes
     {
         private readonly UserManager<User> _userManager;
         private readonly IConfiguration _configuration;
+        private readonly AppDbContext _context;
 
-        public AuthenticationService(UserManager<User> userManager, IConfiguration configuration)
+        public AuthenticationService(UserManager<User> userManager, IConfiguration configuration, AppDbContext context)
         {
             _userManager = userManager;
             _configuration = configuration;
+            _context = context;
         }
 
         public async Task<bool> Register(RegisterRequest request)

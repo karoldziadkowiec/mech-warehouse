@@ -21,5 +21,13 @@ namespace mech_warehouse.WebAPI.Repositories.Classes
                 .Include(u => u.Position)
                 .OrderBy(u => u.LastName));
         }
+
+        public async Task<User> GetUserByEmail(string email)
+        {
+            return await _context.Users
+                .Include(u => u.Address)
+                .Include(u => u.Position)
+                .FirstOrDefaultAsync(u => u.Email == email);
+        }
     }
 }

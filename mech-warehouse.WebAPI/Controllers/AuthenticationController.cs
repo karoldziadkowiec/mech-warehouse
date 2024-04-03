@@ -17,6 +17,7 @@ namespace mech_warehouse.WebAPI.Controllers
             _authenticationService = authenticationService;
         }
 
+        // POST: api/auth/register
         [AllowAnonymous]
         [HttpPost("register")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(string))]
@@ -25,10 +26,10 @@ namespace mech_warehouse.WebAPI.Controllers
         public async Task<IActionResult> Register([FromBody] RegisterRequest request)
         {
             var response = await _authenticationService.Register(request);
-
             return Ok(response);
         }
 
+        // POST: api/auth/login
         [AllowAnonymous]
         [HttpPost("login")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(string))]
@@ -37,7 +38,6 @@ namespace mech_warehouse.WebAPI.Controllers
         public async Task<IActionResult> Login([FromBody] LoginRequest request)
         {
             var response = await _authenticationService.Login(request);
-
             return Ok(response);
         }
     }

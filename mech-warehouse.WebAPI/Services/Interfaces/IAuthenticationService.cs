@@ -1,4 +1,5 @@
 ﻿using mech_warehouse.WebAPI.Models.DTOs;
+using mech_warehouse.WebAPI.Models.Entities;
 
 namespace mech_warehouse.WebAPI.Services.Interfaces
 {
