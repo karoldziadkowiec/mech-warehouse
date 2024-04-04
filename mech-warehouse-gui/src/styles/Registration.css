@@ -1,5 +1,6 @@
 .Registration {
-    background-color: rgb(24, 24, 24);
+    background: url('../img/login-background.jpg');
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,7 +16,7 @@
 }
 
 .registration-container {
-    background-color: rgb(47, 47, 47);
+    background-color: rgba(0, 0, 0, 0.7);
     width: 600px;
     padding: 30px 50px 30px ;
     border-radius: 20px;

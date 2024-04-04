@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace mech_warehouse.WebAPI.Models
+namespace mech_warehouse.WebAPI.Models.Entities
 {
     public class Address
     {

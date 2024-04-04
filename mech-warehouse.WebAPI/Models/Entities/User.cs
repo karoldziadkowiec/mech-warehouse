@@ -1,12 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
 using System.Net;
 
-namespace mech_warehouse.WebAPI.Models
+namespace mech_warehouse.WebAPI.Models.Entities
 {
-    public class User
+    public class User : IdentityUser
     {
-        [Key]
-        public int Id { get; set; }
         [MaxLength(20)]
         public string FirstName { get; set; }
         [MaxLength(30)]
