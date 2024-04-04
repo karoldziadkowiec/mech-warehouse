@@ -4,9 +4,10 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { NavLink } from 'react-router-dom';
+import Logout from '../../components/authentication/Logout';
 import '../../App.css';
 
-const AppNavbar = () => {
+const NavbarComponent = () => {
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container>
@@ -31,7 +32,7 @@ const AppNavbar = () => {
             <Nav.Link as={NavLink} to="/employees">Employees</Nav.Link>
             <NavDropdown title="Account" id="basic-nav-dropdown">
               <NavDropdown.Item as={NavLink} to="/account">My account</NavDropdown.Item>
-              <NavDropdown.Item as={NavLink} to="/">Log out</NavDropdown.Item>
+              <Logout />
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
@@ -40,4 +41,4 @@ const AppNavbar = () => {
   );
 }
 
-export default AppNavbar;
+export default NavbarComponent;

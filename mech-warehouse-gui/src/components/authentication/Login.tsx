@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Form, Button, Alert } from 'react-bootstrap';
-import ApiURL from '../../constants/ApiConfig';
-import { User } from '../../models/interfaces/User';
+import AuthenticationApi from '../../services/api/AuthenticationApi';
 import '../../App.css';
 import '../../styles/Login.css';
 
@@ -23,67 +22,22 @@ const Login = () => {
   };
 
   const handleLogin = async () => {
-    try {
-      const response = await fetch(`${ApiURL}/auth/login`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(loginData)
-      });
+    const { email, password } = loginData;
+    const response = await AuthenticationApi.login(email, password);
 
-      if (response.ok) {
-        const responseData = await response.text();
-        localStorage.setItem('token', responseData);
-        localStorage.setItem('userEmail', loginData.email);
-
-        fetchUserData();
-
-        navigate('/home');
-      } else {
-        setError('Invalid e-mail or password. Please try again.');
-      }
-    } catch (error) {
-      console.error('Error during login:', error);
-      setError('Login failed. Please try again later.');
+    if (response.ok) {
+      const responseData = await response.text();
+      localStorage.setItem('token', responseData);
+      localStorage.setItem('userEmail', email);
+      navigate('/home');
+    } else {
+      setError('Invalid e-mail or password. Please try again.');
     }
   };
 
   const moveToRegistrationPage = () => {
     navigate('/registration');
   };
-
-  const fetchUserData = async () => {
-    try {
-      const token = localStorage.getItem('token');
-      const userEmail = localStorage.getItem('userEmail');
-      if (!token || !userEmail) {
-        setError('Token or email not found.');
-        return;
-      }
-
-      const response = await fetch(`${ApiURL}/user?email=${encodeURIComponent(userEmail)}`, {
-        method: 'GET',
-        headers: {
-          'Authorization': `Bearer ${token}`
-        }
-      });
-
-      if (response.ok) {
-        const userData: User = await response.json();
-        localStorage.setItem('user', JSON.stringify(userData));
-      } else {
-        setError('Failed to fetch user data.');
-      }
-    } catch (error) {
-      console.error('Error fetching user data:', error);
-      setError('An error occurred. Please try again later.');
-    }
-  };
-
-  useEffect(() => {
-    fetchUserData();
-  }, []);
 
   return (
     <div className="Login">

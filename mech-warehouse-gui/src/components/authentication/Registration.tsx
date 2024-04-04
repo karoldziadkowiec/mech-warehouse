@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Form, Button, Col, Row, Alert } from 'react-bootstrap';
 import { RegistrationData } from '../../models/dtos/RegistrationData';
-import { registerUser } from '../../services/api/RegistrationApi';
+import AuthenticationApi from '../../services/api/AuthenticationApi';
 import '../../App.css';
 import '../../styles/Registration.css';
 
@@ -41,14 +41,14 @@ const Registration = () => {
             setError('Phone number must contain exactly 9 digits.');
             return;
         }
-    
+
         if (registrationData.password !== registrationData.confirmedPassword) {
             setError('Passwords do not match.');
             return;
         }
 
-        const response = await registerUser(registrationData);
-    
+        const response = await AuthenticationApi.registerUser(registrationData);
+
         if (response.success) {
             const { token } = response.data;
             localStorage.setItem('token', token);

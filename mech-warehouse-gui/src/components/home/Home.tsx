@@ -3,6 +3,7 @@ import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import { Element, scroller } from 'react-scroll';
 import { Button, Alert } from 'react-bootstrap';
 import { User } from '../../models/interfaces/User';
+import UserApi from '../../services/api/UserApi';
 import '../../styles/Home.css';
 
 const Home = () => {
@@ -11,13 +12,17 @@ const Home = () => {
     const [error, setError] = useState<string>('');
 
     useEffect(() => {
-        const userDataString = localStorage.getItem('user');
-        if (userDataString) {
-            const userData: User = JSON.parse(userDataString);
-            setUser(userData);
-        } else {
-            setError('User data not found.');
-        }
+        const fetchUserData = async () => {
+            try {
+                const userData = await UserApi.getUserData();
+                setUser(userData);
+            } catch (error) {
+                console.error('Error fetching user data:', error);
+                setError('An error occurred. Please try again later.');
+            }
+        };
+
+        fetchUserData();
     }, []);
 
     const handleLinkClick = (id: string) => {
