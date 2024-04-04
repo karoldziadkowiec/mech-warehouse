@@ -51,7 +51,7 @@ namespace mech_warehouse.WebAPI.Repositories.Classes
 
         public async Task DeleteUser(string userEmail)
         {
-            var user = await _context.Users.FindAsync(userEmail);
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == userEmail);
             if (user != null)
             {
                 _context.Users.Remove(user);

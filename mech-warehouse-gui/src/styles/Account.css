@@ -1,6 +1,37 @@
 .Account {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
     padding-top: 20px;
-    padding-bottom: 20px;
+    font-size: 17px;
 }
 
+.user-data-container {
+    background-color: rgb(39, 37, 37);
+    width: 30%;
+    border-radius: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.yellow-label {
+    color: rgb(194, 157, 25);
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.white-label {
+    color: white;
+}
+
+.buttons-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.form-button {
+    width: 150px;
+}

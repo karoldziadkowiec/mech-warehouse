@@ -47,8 +47,8 @@ namespace mech_warehouse.WebAPI.Controllers
             return Ok(user);
         }
 
-        // PUT: /api/users/:id
-        [HttpPut("users/{userId}")]
+        // PUT: /api/users/:email
+        [HttpPut("users/{userEmail}")]
         public async Task<IActionResult> UpdatePatient(User user, string userEmail)
         {
             try
@@ -68,8 +68,8 @@ namespace mech_warehouse.WebAPI.Controllers
             }
         }
 
-        // DELETE: /api/users/:id
-        [HttpDelete("users/{userId}")]
+        // DELETE: /api/users/:email
+        [HttpDelete("users/{userEmail}")]
         public async Task<IActionResult> DeletePatient(string userEmail)
         {
             try
