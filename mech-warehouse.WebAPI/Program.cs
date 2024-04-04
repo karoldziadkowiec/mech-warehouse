@@ -59,6 +59,9 @@ namespace mech_warehouse.WebAPI
             // Dependency Injection
             builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
             builder.Services.AddScoped<IUserRepository, UserRepository>();
+            builder.Services.AddScoped<IUserSortRepository, UserSortRepository>();
+            builder.Services.AddScoped<IUserSearchRepository, UserSearchRepository>();
+            builder.Services.AddScoped<IUserExportService, UserExportService>();
 
             // Swagger authentication
             builder.Services.AddSwaggerGen(c =>

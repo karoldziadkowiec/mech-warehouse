@@ -6,5 +6,7 @@ namespace mech_warehouse.WebAPI.Repositories.Interfaces
     {
         Task<IQueryable<User>> GetAllUsers();
         Task<User> GetUserByEmail(string email);
+        Task UpdateUser(User user);
+        Task DeleteUser(string userEmail);
     }
 }

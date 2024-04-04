@@ -21,7 +21,6 @@ const Home = () => {
                 setError('An error occurred. Please try again later.');
             }
         };
-
         fetchUserData();
     }, []);
 
