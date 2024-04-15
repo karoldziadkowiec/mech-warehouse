@@ -15,6 +15,12 @@ The project is a web application presenting a warehouse system for mechanics.
     - TypeScript
 
 ## Example Images
-![1](github-images/1.png)
+![1](github-images/1_.png)
 
-![2](github-images/2.png)
+![2](github-images/2_.png)
+
+![3](github-images/3.png)
+
+![4](github-images/4.png)
+
+![5](github-images/5.png)
