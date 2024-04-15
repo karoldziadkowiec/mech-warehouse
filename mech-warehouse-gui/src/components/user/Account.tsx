@@ -118,27 +118,27 @@ const Account = () => {
                 <Modal.Body>
                     <Form>
                         <Form.Group controlId="formFirstName">
-                            <Form.Label>First Name</Form.Label>
+                            <Form.Label className="yellow-label">First Name</Form.Label>
                             <Form.Control name="firstName" size="sm" type="text" placeholder="Enter first name" maxLength={20} onChange={handleChange} required value={editedUser?.firstName || ''} />
                         </Form.Group>
                         <Form.Group controlId="formLastName">
-                            <Form.Label>Last Name</Form.Label>
+                            <Form.Label className="yellow-label">Last Name</Form.Label>
                             <Form.Control name="lastName" size="sm" type="text" placeholder="Enter last name" maxLength={30} onChange={handleChange} required value={editedUser?.lastName || ''} />
                         </Form.Group>
                         <Form.Group controlId="formPhoneNumber">
-                            <Form.Label>Phone Number</Form.Label>
+                            <Form.Label className="yellow-label">Phone Number</Form.Label>
                             <Form.Control name="phoneNumber" size="sm" type="tel" placeholder="Enter phone number" maxLength={9} onChange={handleChange} required value={editedUser?.phoneNumber || ''} />
                         </Form.Group>
                         <Form.Group controlId="formJobPosition">
-                            <Form.Label>Job Position</Form.Label>
+                            <Form.Label className="yellow-label">Job Position</Form.Label>
                             <Form.Control name="position.name" size="sm" type="text" placeholder="Enter job position" maxLength={20} onChange={handleChange} required value={editedUser?.position.name || ''} />
                         </Form.Group>
                         <Form.Group controlId="formCity">
-                            <Form.Label>City</Form.Label>
+                            <Form.Label className="yellow-label">City</Form.Label>
                             <Form.Control name="address.city" size="sm" type="text" placeholder="Enter city" maxLength={20} onChange={handleChange} required value={editedUser?.address.city || ''} />
                         </Form.Group>
                         <Form.Group controlId="formStreet">
-                            <Form.Label>Street</Form.Label>
+                            <Form.Label className="yellow-label">Street</Form.Label>
                             <Form.Control name="address.street" size="sm" type="text" placeholder="Enter street" maxLength={30} onChange={handleChange} required value={editedUser?.address.street || ''} />
                         </Form.Group>
                     </Form>
