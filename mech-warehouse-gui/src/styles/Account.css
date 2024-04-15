@@ -9,10 +9,10 @@
 
 .user-data-container {
     background-color: rgb(39, 37, 37);
-    width: 30%;
+    width: 300px;
     border-radius: 20px;
     padding-top: 40px;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
 }
 
 .yellow-label {
