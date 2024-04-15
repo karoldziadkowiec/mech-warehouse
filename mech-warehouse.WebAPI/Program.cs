@@ -96,7 +96,7 @@ namespace mech_warehouse.WebAPI
                 });
             });
 
-            // 6. CORS policy
+            // CORS policy
             builder.Services.AddCors(options =>
             {
                 options.AddPolicy("AllowReactDevClient",
